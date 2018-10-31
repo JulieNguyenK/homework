@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <!-- Render our data -->
+      <h1>Mission to Mars</h1>
+      <a href="/rescrape" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Scrape New Data</a>
+    </div>
+
+    <div class = "row">
+      <div class = "col-md-10">
+        <h2>{{ news_title }}</h2>
+        {{news_paragraph}}
+      </div>
+    </div>
+    
+    <div>
+      {{ mars_weather}}
+    </div>
+    <div>
+      {{ mars_facts }}
+    </div>
+    <div>
+      <img src="{{ JPLfeatured_image }}" />
+    </div>
+    <div>
+      {% for entry in hemispheres %}
+    
+      <h2>{{ entry['title'] }}</h1>
+      <img src="{{ entry['img_url'] }}"></img>
+    
+      {% endfor %}
+    </div>
+    
+  
+  </div>
+</body>
+
+</html>
